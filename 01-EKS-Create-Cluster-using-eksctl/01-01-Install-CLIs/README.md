@@ -69,18 +69,20 @@ aws ec2 describe-vpcs
 # Download the Package
 mkdir kubectlbinary
 cd kubectlbinary
-curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.16.8/2020-04-16/bin/darwin/amd64/kubectl
+curl -o kubectl https://s3.us-west-2.amazonaws.com/amazon-eks/1.23.7/2022-06-29/bin/darwin/amd64/kubectl
 
 # Provide execute permissions
 chmod +x ./kubectl
 
 # Set the Path by copying to user Home Directory
 mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin
-echo 'export PATH=$PATH:$HOME/bin' >> ~/.bash_profile
+echo 'export PATH=$PATH:$HOME/bin' >> ~/.zprofile
 
 # Verify the kubectl version
 kubectl version --short --client
-Output: Client Version: v1.16.8-eks-e16311
+Output: 
+Client Version: v1.24.2
+Kustomize Version: v4.5.4
 ```
 
 
